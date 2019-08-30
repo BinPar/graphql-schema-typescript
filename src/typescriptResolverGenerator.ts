@@ -56,6 +56,7 @@ export class TSResolverGenerator {
 
     if (this.options.importStatements) {
       this.importHeader.push(...this.options.importStatements);
+      this.importHeader.push('\n');
     }
 
     this.resolverObject = [];
