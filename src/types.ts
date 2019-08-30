@@ -121,6 +121,6 @@ export const defaultOptions: GenerateTypescriptOptions = {
     contextType: 'any',
     rootValueType: 'undefined',
     strictNulls: false,
-    disableComments: true,
-    avoidDisableLinter: true,
+    disableComments: false,
+    avoidDisableLinter: false,
 };

@@ -74,7 +74,7 @@ export const generateTSTypesAsString = async (schema: GraphQLSchema | string, op
 
     let header = [...typeResolvers.importHeader];
 
-    if(!mergedOptions.disableComments) {
+    if (!mergedOptions.disableComments) {
       header.push(jsDoc);
     }
     let body: string[] = [];
