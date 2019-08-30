@@ -33,9 +33,6 @@ export class TSResolverGenerator {
     protected introspectionResult: IntrospectionQuery
   ) {
     this.contextType = options.contextType || 'any';
-    if (options.importStatements) {
-      this.importHeader.push(...options.importStatements);
-    }
   }
 
   public async generate(): Promise<GenerateResolversResult> {
@@ -56,6 +53,11 @@ export class TSResolverGenerator {
     } else {
       this.importHeader.push(`import { GraphQLResolveInfo } from 'graphql';`);
     }
+
+    if (this.options.importStatements) {
+      this.importHeader.push(...this.options.importStatements);
+    }
+
     this.resolverObject = [];
     if (!this.options.disableComments) {
       this.resolverObject.push(
